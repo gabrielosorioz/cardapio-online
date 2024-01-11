@@ -4,9 +4,18 @@
         <link rel="stylesheet" href="./css/bootstrap.min.css"/>
         <link rel="stylesheet" href="./css/fontawesome.css"/>
         <link rel="stylesheet" href="./css/main.css"/>
+        <link rel="stylesheet" href="./css/animate.css"/>
         <title>Restaurante - Seja bem vindo</title>
     </head>
     <body>
+        <div class="container-mensagens" id="container-mensagens">
+
+        </div>
+
+        <a class="botao-carrinho hidden" onclick="cardapio.metodos.abrirCarrinho(true)">
+            <div class="badge-total-carrinho">0</div>
+            <i class="fa fa-shopping-bag"></i>
+        </a>
 
        <section class="header">
             <div class ="container">
@@ -14,11 +23,7 @@
                     <a class="navbar-brand" href="#">
                         <img src="./img/logo.png" width="160" calss="img-logo"/>
                     </a>
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="navbarNavDropdown">
-                        <span class="navbar-toggle-icon">
-                            <i class="fas fa-bars"></i>
-                        </span>
-                    </button>
+                    
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ml-auto mr-auto">
                             <li class="nav-item">
@@ -35,8 +40,10 @@
                             </li>
                           
                         </ul>
-                        <a class="btn btn-white btn-icon">
+                        <a class="btn btn-white btn-icon" onclick="cardapio.metodos.abrirCarrinho(true)">
+                            
                             Meu carrinho <span class="icon">
+                                <div class="container-total-carrinho badge-total-carrinho hidden">8</div>
                                 <i class="fa fa-shopping-bag"></i>
                             </span>
                         </a>
@@ -384,7 +391,7 @@
        <div class="modal-full hidden" id="modalCarrinho">
             <div class="m-header">
                 <div class="container">
-                    <a class="btn btn-white btn-sm float-right">
+                    <a class="btn btn-white btn-sm float-right" onclick="cardapio.metodos.abrirCarrinho(false)">
                         Fechar
                     </a>
                     <div class="etapas">
